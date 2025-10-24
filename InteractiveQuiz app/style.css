@@ -1,0 +1,183 @@
+:root {
+  --primary: #0072ff;
+  --success: #28a745;
+  --danger: #dc3545;
+  --bg-light: #f9f9f9;
+  --bg-dark: #121212;
+  --text-light: #fff;
+  --text-dark: #222;
+}
+
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0; padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #0072ff, #00c6ff, #7f00ff, #e100ff);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.4s, color 0.4s;
+}
+@keyframes gradientShift {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+body.dark {
+  background: linear-gradient(-45deg, #1e1e1e, #2e2e2e, #1a1a1a, #3a3a3a);
+  color: var(--text-light);
+}
+button {
+  cursor: pointer;
+}
+/* ...existing code... */
+body {
+  background-image: url('C:\Users\Dell\Desktop\nm\download (1).png'); /* Use your image filename or URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+/* ...existing code... */
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: var(--bg-light);
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  padding: 30px 40px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: background-color 0.4s, color 0.4s;
+}
+body.dark .container {
+  background: #222;
+}
+
+h1 {
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+#category, #difficulty, #language-select-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+#timer {
+  font-weight: 700;
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--danger);
+}
+#choices {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.choice-btn {
+  background: #eee;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+.choice-btn:hover:not(:disabled) {
+  background: #ddd;
+}
+.choice-btn.correct {
+  background: #d4edda;
+  border-color: var(--success);
+  color: #155724;
+}
+.choice-btn.wrong {
+  background: #f8d7da;
+  border-color: var(--danger);
+  color: #721c24;
+}
+.choice-btn:disabled {
+  cursor: not-allowed;
+}
+
+#feedback {
+  margin-top: 12px;
+  min-height: 24px;
+  font-weight: 700;
+}
+#next-btn, #start-btn, #restart-btn, #hint-btn, #darkmode-toggle, #sound-toggle, #share-btn {
+  margin-top: 20px;
+  background: var(--primary);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+#next-btn:disabled, #hint-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+#next-btn:hover:not(:disabled), #start-btn:hover, #restart-btn:hover, #hint-btn:hover:not(:disabled),
+#darkmode-toggle:hover, #sound-toggle:hover, #share-btn:hover {
+  background: #005bb5;
+}
+
+.hidden {
+  display: none !important;
+}
+#result-box {
+  text-align: center;
+}
+#score-breakdown {
+  margin-top: 15px;
+  text-align: left;
+}
+#progress-bar {
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+#progress-bar-fill {
+  background: var(--primary);
+  height: 100%;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+/* Flex utilities */
+.flex-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+label {
+  font-size: 14px;
+  user-select: none;
+}
+
+/* Countdown style */
+#countdown {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+body.dark #countdown {
+  color: #8ab4f8;
+}

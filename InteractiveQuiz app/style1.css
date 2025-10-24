@@ -1,0 +1,115 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Full-screen cream background and centered layout */
+.bg-cont {
+  height: 100vh;
+  width: 100vw; 
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: lightskyblue;
+}
+
+/* Container for content */
+.container {
+  text-align: center;
+  padding: 30px;
+  margin:250px;
+  max-width: 800px;
+  height:100%;
+  width:100%;
+  justify-content: center;
+}
+
+/* Title animation */
+.animate-title {
+  font-size: 3em;
+  font-weight: bold;
+  text-align:center;
+  color: #b22222; /* Deep red for contrast */
+  animation: fadeInDown 1s ease-out;
+  margin-bottom: 10px;
+}
+
+/* Subtext fade-in */
+.fade-in {
+  font-size: 1.2em;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+  animation-delay: 0.5s;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Logo image */
+.main-banner img {
+  width: 140px;
+  height: auto;
+  border-radius: 50%;
+  margin: 20px 0;
+  animation: slideIn 1.5s ease-out;
+}
+
+/* Glow button */
+.glow-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  background-color: #b22222; /* Deep red */
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #b22222;
+  transition: all 0.3s ease-in-out;
+}
+
+.glow-button:hover {
+  background-color: #ff6347; /* Lighter red */
+  box-shadow: 0 0 20px #ff6347;
+  transform: scale(1.05);
+}
+
+/* Footer styling */
+footer {
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

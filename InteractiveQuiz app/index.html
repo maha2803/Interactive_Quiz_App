@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>THINK SPARK</title>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+
+  <h1>🧠 Quiznova</h1>
+  <div class="flex-row" style="justify-content:center; margin-bottom: 10px;">
+    <label id="language-select-label" for="language-select">Language:</label>
+    <select id="language-select" aria-label="Select quiz language">
+      <option value="en" selected>English</option>
+      <option value="es">Tamil</option>
+    </select>
+  </div>
+
+  <!-- Difficulty Filter -->
+  <div class="flex-row" style="justify-content:center; margin-bottom: 10px;">
+    <label for="difficulty-select">Difficulty:</label>
+    <select id="difficulty-select" aria-label="Select difficulty filter">
+      <option value="all" selected>All</option>
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+  </div>
+
+  <!-- Category Selector -->
+  <div class="flex-row" style="justify-content:center; margin-bottom: 10px;">
+    <label for="category-select">Category:</label>
+    <select id="category-select" aria-label="Select question category">
+      <option value="all" selected>All</option>
+    </select>
+  </div>
+
+  <!-- Timer Display -->
+  <div id="timer" aria-live="polite" role="timer" aria-atomic="true">⏱ Time Left: <span id="time">0</span>s</div>
+
+  <!-- Countdown Before Start -->
+  <div id="countdown" class="hidden" aria-live="polite"></div>
+
+  <!-- Question Category and Difficulty -->
+  <p id="category" aria-live="polite" style="font-weight: 600;"></p>
+  <p id="difficulty" aria-live="polite" style="font-weight: 600; color: #555;"></p>
+
+  <!-- Question Text -->
+  <p id="question" style="font-size: 20px; font-weight: 600; margin: 15px 0;"></p>
+
+  <!-- Choices -->
+  <div id="choices" role="list" aria-label="Answer choices"></div>
+
+  <!-- Feedback -->
+  <div id="feedback" aria-live="polite" role="alert"></div>
+
+  <!-- Controls -->
+  <div class="flex-row" style="justify-content:center; flex-wrap: wrap;">
+    <button id="hint-btn" title="Use 50-50 hint">💡 Hint (50-50)</button>
+    <button id="next-btn" disabled>Next</button>
+  </div>
+
+  <!-- Progress Bar -->
+  <div id="progress-bar" aria-label="Quiz progress">
+    <div id="progress-bar-fill"></div>
+  </div>
+
+  <!-- Result Box -->
+  <div id="result-box" class="hidden" role="region" aria-live="polite" aria-label="Quiz results summary" tabindex="0">
+    <h2>🎉 Quiz Completed!</h2>
+    <p id="score"></p>
+    <div id="score-breakdown"></div>
+    <div class="flex-row" style="justify-content:center; margin-top: 15px; flex-wrap: wrap;">
+      <button id="restart-btn">Restart Quiz</button>
+      <button id="share-btn" title="Share your score">🔗 Share Score</button>
+    </div>
+    <h3>Leaderboard</h3>
+    <ol id="leaderboard"></ol>
+  </div>
+  <div id="result-box" class="hidden">
+  <h2>🎉 Quiz Completed!</h2>
+  <p id="score"></p>
+  <button id="share-btn">Share your score</button>
+  <button id="restart-btn">Restart</button>
+</div>
+
+
+  <!-- Settings toggles -->
+  <div style="margin-top: 25px;">
+    <button id="darkmode-toggle" aria-pressed="false" title="Toggle dark mode">🌙 Dark Mode</button>
+    <button id="sound-toggle" aria-pressed="true" title="Toggle sound">🔊 Sound On</button>
+  </div>
+
+  <!-- Start Quiz Button & Timer Input -->
+  <div id="start-section" style="margin-top: 25px;">
+    <label for="timer-input">Set seconds per question:</label>
+    <input type="number" id="timer-input" min="5" max="60" value="10" style="width: 60px; margin-left: 10px;" />
+    <button id="start-btn" style="margin-left: 15px;">Start Quiz</button>
+  </div>
+
+</div>
+
+<!-- Sounds -->
+<audio id="correct-sound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" preload="auto"></audio>
+<audio id="wrong-sound" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg" preload="auto"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
